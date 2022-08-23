@@ -5,21 +5,6 @@ mantidas as taxas de crescimento.
 Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. 
 Valide a entrada e permita repetir a operação. */
 
-/* let popA = window.prompt(`Digite a população da cidade A:`)
-let popB = window.prompt(`Digite a população da cidade B:`)
-let taxaA = window.prompt(`Digite a taxa de crescimento população da cidade A:
-                            usar (.) ponto no lugar da (,) virgula `)
-let taxaB = window.prompt(`Digite a taxa de crescimento população da cidade B:
-                            usar (.) ponto no lugar da (,) virgula`)
-
-let anos = 0;
-let crescA = (popA * taxaA)/100;
-let crescB = (popB * taxaB)/100;
-
-alert(`População de A = ${popA}  População de B = ${popB}`);
-alert(`Crescimento A = ${crescA}  Crescimento B = ${crescB}`); */
-
-
 let popA = window.prompt(`insira a população da cidade A`);
 let popB = window.prompt(`insira a população da cidade B`);
 let txA = window.prompt(`Digite a taxa de crescimento população da cidade A:
