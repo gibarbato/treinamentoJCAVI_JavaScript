@@ -10,6 +10,7 @@ function maiorNumero() {
         valorRecebido = window.prompt(`${i}º valor: `);
 
         document.writeln(`${i}º número = ${valorRecebido} <br>`);
+        valorRecebido = parseInt(valorRecebido);
 
         if (valorRecebido > maior) {
             maior = valorRecebido;
