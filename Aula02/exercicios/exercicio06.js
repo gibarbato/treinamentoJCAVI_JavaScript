@@ -7,7 +7,7 @@ function maiorNumero() {
     let valorRecebido = 0;
 
     for (i = 1; i <= limite; i++) {
-        valorRecebido = window.prompt(`${i}º valor:`);
+        valorRecebido = window.prompt(`${i}º valor: `);
 
         document.writeln(`${i}º número = ${valorRecebido} <br>`);
 
