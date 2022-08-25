@@ -5,6 +5,7 @@ mantidas as taxas de crescimento.
 Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. 
 Valide a entrada e permita repetir a operação. */
 
+function populacao(){
 let popA = window.prompt(`insira a população da cidade A`);
 let popB = window.prompt(`insira a população da cidade B`);
 let txA = window.prompt(`Digite a taxa de crescimento população da cidade A:
@@ -27,3 +28,4 @@ for (popAtualA; popAtualA <= popAtualB; crescA = popAtualA * txA) {
     //document.writeln(`crescimento populacional de A = ${popAtualA.toFixed(0)}  de B = ${popAtualB.toFixed(0)} - anos = ${anos}<br>`);
 }
 alert(`crescimento populacional de A = ${popAtualA.toFixed(0)}  de B = ${popAtualB.toFixed(0)} - anos = ${anos}`);
+}

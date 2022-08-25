@@ -8,4 +8,4 @@ function numerosImpares(){
     }
     }
     
-    numerosImpares()
+    //numerosImpares()

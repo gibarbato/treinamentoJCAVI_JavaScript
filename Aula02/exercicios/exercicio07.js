@@ -21,4 +21,4 @@ media = soma/limite;
 document.writeln(`Média dos valores inseridos = ${media}`);
 }
 
-somaMedia();
+//somaMedia();

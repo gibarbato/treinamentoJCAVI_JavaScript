@@ -20,4 +20,4 @@ function maiorNumero() {
     document.writeln(`O maior valor digitado da comparação de ${i-1} números foi --> ${maior}`);
 }
 
-maiorNumero();
+//maiorNumero();

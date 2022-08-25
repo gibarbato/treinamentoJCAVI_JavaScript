@@ -22,6 +22,6 @@ function intervalo() {
         somaValores = somaValores + valoresIntervalo;
         document.writeln(`${valoresIntervalo}`);
     }
-    document.writeln(`<br> Somo dos valores do intervalo é :${somaValores}`);
+    document.writeln(`<br> Soma dos valores do intervalo é :${somaValores}`);
 }
-intervalo()
+//intervalo()
