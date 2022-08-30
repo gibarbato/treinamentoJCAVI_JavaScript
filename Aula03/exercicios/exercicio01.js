@@ -7,4 +7,8 @@ na tela o seguinte texto: 'A soma dos valores é ${(resultado)}'. */
 let somarValores = (n1, n2) => {
     return n1 + n2
 }
-document.writeln(`A soma dos valores é ${somarValores(10,30)}`)
+
+n1 = 32
+n2 = 28
+
+document.writeln(`A soma dos valores é ${somarValores(n1, n2)}`)

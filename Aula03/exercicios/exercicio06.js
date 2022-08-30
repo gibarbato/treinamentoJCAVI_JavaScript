@@ -11,13 +11,31 @@ Aqui, temos:
 Sabemos que a única letra que não possui repetição está na posição [4], 
 elemento “c”. Então, crie uma função que retornar este elemento. */
 
-let vetores = ["a", "b", "a", "a", "c", "b"]
-let count = 0
+const vetores = ["a", "b", "a", "a", "c", "b"]
+let count = 0;
+let soma = 0
+let resposta
 
-function letrasRepetidas() {
-    for (i = 0; i < vetores.length; i++) {
-        let vetor = vetores[i]
 
-        document.writeln(`posição array = ${i} - letra da posição ${vetor}`)
+function retornaElementoUnitario() {
+    for (let x = 0; x < vetores.length; x++) {
+        for (let y = 0; y < vetores.length; y++) {
+            if (vetores[x] === vetores[y]) {
+                count++
+                soma += count
+            }
+
+            document.writeln(`(${vetores[x]}, ${vetores[y]} - contador ${count} - soma ${soma})<br>`)
+            count = 0;
+
+        }
+        if (soma === 1) {
+            resposta = vetores[x]
+        }
+        soma = 0;
     }
+    document.writeln(`Elemento que não possui repetição ${resposta}`)
+    
 }
+
+//retornaElementoUnitario()
