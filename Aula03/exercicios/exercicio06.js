@@ -35,7 +35,7 @@ function retornaElementoUnitario() {
         soma = 0;
     }
     document.writeln(`Elemento que não possui repetição ${resposta}`)
-    
+
 }
 
 //retornaElementoUnitario()
