@@ -9,20 +9,26 @@ let limite = 0;
 let somaValores = 0;
 
 function validaDados() {
-    limite = window.prompt(`digite a quantidade de elementos do ARRAY:`);
-    limite = parseInt(limite);
-    for (let i = 0; i < limite; i++) {
-        numeros[i] = window.prompt(`digite o ${i + 1} valor`);
-        document.writeln(numeros[i])
-    }
-    function somarValoresArray() {
-        for (let i = 0; i < numeros.length; i++) {
-            let numero = numeros[i]
-            numero = parseInt(numero)
-            somaValores += numero;
+    limite = Number(window.prompt(`digite a quantidade de elementos do ARRAY:`));
+    console.log(typeof(limite));
+    if (limite > 0){
+        for (let i = 0; i < limite; i++) {
+            numeros[i] = window.prompt(`digite o ${i + 1} valor`);
+            document.writeln(numeros[i])
         }
-        document.writeln(`<br>A soma dos valores do array é ${somaValores}`)
+        function somarValoresArray() {
+            for (let i = 0; i < numeros.length; i++) {
+                let numero = numeros[i]
+                numero = parseInt(numero)
+                somaValores += numero;
+            }
+            document.writeln(`<br>A soma dos valores do array é ${somaValores}`)
+        }
+        somarValoresArray();        
+    } else {
+        alert('Digite um valor válido')
+       // validaDados()
     }
-    somarValoresArray();
+      
 }
 

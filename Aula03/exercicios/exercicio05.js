@@ -12,20 +12,27 @@ let media = 0;
 function validaDados2() {
     tamanho = window.prompt(`digite a quantidade de elementos do ARRAY:`);
     tamanho = parseInt(tamanho);
-    for (let i = 0; i < tamanho; i++) {
-        dadosArrays[i] = window.prompt(`digite o ${i + 1} valor`);
-        document.writeln(dadosArrays[i])
-    }
-    function mediaDados() {
-        for (let i = 0; i < dadosArrays.length; i++) {
-            let mediaDado = dadosArrays[i];
-            mediaDado = parseInt(mediaDado);
-            somarDados += mediaDado;
-
+    
+    if (tamanho > 0 ) {
+        for (let i = 0; i < tamanho; i++) {
+            dadosArrays[i] = window.prompt(`digite o ${i + 1} valor`);
+            document.writeln(dadosArrays[i])
         }
-        media = somarDados/dadosArrays.length;
-        document.writeln(`<br>A soma dos dados do Array é ${somarDados}`);
-        document.writeln(`<br>A média dos dados do Array é ${media}`);
+        function mediaDados() {
+            for (let i = 0; i < dadosArrays.length; i++) {
+                let mediaDado = dadosArrays[i];
+                mediaDado = parseInt(mediaDado);
+                somarDados += mediaDado;
+    
+            }
+            media = somarDados/dadosArrays.length;
+            document.writeln(`<br>A soma dos dados do Array é ${somarDados}`);
+            document.writeln(`<br>A média dos dados do Array é ${media}`);
+        }
+        mediaDados()
+    } else {
+        alert('Digite um valor válido')
+        validaDados2()
     }
-    mediaDados()
+    
 }
