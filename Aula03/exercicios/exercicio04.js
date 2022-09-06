@@ -11,3 +11,11 @@ function textoDigitado(texto) {
     document.writeln(texto)
 }
 
+// resolução em sala
+
+function meuPrompt(mensagem) {
+    return prompt(mensagem)
+}
+
+let idade = meuPrompt('Digite a sua idade');
+alert(idade);
