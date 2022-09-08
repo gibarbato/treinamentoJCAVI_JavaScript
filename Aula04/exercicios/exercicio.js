@@ -49,7 +49,7 @@ function executarMenu() {
         executarMenu();
     }
 }
-
+executarMenu();
 
 function listarVeiculos() {
 
@@ -64,7 +64,7 @@ function listarVeiculos() {
     }
 }
 
-executarMenu();
+
 
 function cadastrarVeiculo() {
     let placa
