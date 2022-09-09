@@ -30,8 +30,8 @@ function executarMenu() {
 `)
 
     if (resultado == "1") {
-        //validarPlaca() // chamado antes para verificar se a placa já está cadastrada
-        cadastrarVeiculo() //é chamado se não existir veículo cadastrado com a placa informada
+        validarPlaca() // chamado antes para verificar se a placa já está cadastrada
+        //cadastrarVeiculo() //é chamado se não existir veículo cadastrado com a placa informada
     }
     if (resultado == "2") {
         listarVeiculos();
@@ -52,7 +52,7 @@ function executarMenu() {
 executarMenu();
 
 function cadastrarVeiculo() {
-     const veiculo = {
+    const veiculo = {
         placa: prompt('Digite a placa do veiculo'),
         modelo: prompt('Digite o modelo do veiculo'),
         marca: prompt('Digite a marca do veiculo'),
@@ -73,17 +73,74 @@ function listarVeiculos() {
     });
 }
 
-function validarPlaca() {
+/* function validarPlaca() {
     let consultaPlaca = prompt(`Consulte a placa do veículo para validar cadastro:`);
+    let count = 0;
     alert(`A placa informada é: ${consultaPlaca}`)
-    
+
     veiculos.forEach(placaCadastrada => {
-        if(consultaPlaca == placaCadastrada.placa){
-            console.log('placa JÁ cadastrada')
-        } else {
+
+        if (consultaPlaca == placaCadastrada.placa) {
+            count++
+        }
+        if (count == 0) {
             console.log('veículo não cadastrado')
             console.log('você será direcionado para tela de cadastro')
             cadastrarVeiculo()
+        } else {
+            console.log('placa JÁ cadastrada')
         }
     });
 }
+ */
+function validarPlaca() {
+    let consultaPlaca = prompt(`Consulte a placa do veículo para validar cadastro:`);
+    //console.log(`Placa consultada - ${consultaPlaca}`);
+    let count = 0;
+
+    for (let i = 0; i < veiculos.length; i++) {
+        const teste = veiculos[i].placa
+        //verificaçãp se a placa já existe 
+
+        if (consultaPlaca == teste) {
+            count++;
+        }
+    }
+    if (count !== 0) {
+        console.log(`Veículo com a placa - ${consultaPlaca} - já cadastrado`)
+        console.log(veiculos.find(placa => placa.placa === consultaPlaca));
+        alert(`Veículo com a placa - ${consultaPlaca} - já cadastrado`)
+        //console.log(`O modelo do veículo é ${veiculos[i].modelo}`);
+        //console.log(Object.values(veiculos[i]));
+    } else {
+        console.log(`Veículo com a placa - ${consultaPlaca} - pode ser cadastrado`);
+        console.log(`Você será direcionado para a tela de cadastro`);
+        alert(`Veículo com a placa - ${consultaPlaca} - pode ser cadastrado`);
+        alert(`Você será direcionado para a tela de cadastro`);
+        cadastrarVeiculo()
+    }
+}
+
+function consultaVeiculo() {
+    let informacao = prompt(`Consulte os veículos por modelo, marca ou placa:`);
+    let count = 0;
+    console.log(`Consulta - ${informacao}`);
+
+    for (let j = 0; j < veiculos.length; j++) {
+        //console.log(`ANTES DO IF - ${veiculos[j].marca} --- ${informacao}`)
+        if(veiculos[j].marca === informacao){
+            count ++
+            //console.log(`${veiculos[j].marca} --- ${informacao} = true`);
+            //console.log(count);
+        } else {
+            count = 0;
+            //console.log(`${veiculos[j].marca} --- ${informacao} = false`)
+            //console.log(count);
+        }
+        if(count > 0) {
+            console.log(`Veículo cadastrado - marca: ${veiculos[j].marca} - modelo: ${veiculos[j].modelo} - placa: ${veiculos[j].placa} - ano: ${veiculos[j].ano}`);
+        }
+    }
+}
+
+
