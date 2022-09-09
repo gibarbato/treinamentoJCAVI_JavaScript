@@ -127,15 +127,10 @@ function consultaVeiculo() {
     console.log(`Consulta - ${informacao}`);
 
     for (let j = 0; j < veiculos.length; j++) {
-        //console.log(`ANTES DO IF - ${veiculos[j].marca} --- ${informacao}`)
-        if(veiculos[j].marca === informacao){
+        if(veiculos[j].marca === informacao || veiculos[j].modelo === informacao || veiculos[j].ano === informacao || veiculos[j].placa === informacao){
             count ++
-            //console.log(`${veiculos[j].marca} --- ${informacao} = true`);
-            //console.log(count);
         } else {
             count = 0;
-            //console.log(`${veiculos[j].marca} --- ${informacao} = false`)
-            //console.log(count);
         }
         if(count > 0) {
             console.log(`Veículo cadastrado - marca: ${veiculos[j].marca} - modelo: ${veiculos[j].modelo} - placa: ${veiculos[j].placa} - ano: ${veiculos[j].ano}`);
