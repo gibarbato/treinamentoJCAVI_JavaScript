@@ -1,9 +1,21 @@
-
-var arrayMarcas = ['Ford', 'BMW', 'Fiat', 'Audi', 'Volkswagen'];
+let marcas = [];
+let arrayMarcas = ['Ford', 'BMW', 'Fiat', 'Audi', 'Volkswagen'];
 arrayMarcas.forEach((marca, indice) => {
     console.log("A marca " + marca + " corresponde ao índice: " + indice);
 });
 
+marcas = arrayMarcas.slice(2,3);
+
+marcas.forEach((marca, indice) => {
+    console.log("A marca " + marca + " corresponde ao índice: " + indice);
+});
+
+
+
+
+
+
+/* 
 var arrayNumeros = [1,2,3,4,5,6];
 arrayNumeros.forEach(function(elemento){
     if (elemento % 2 == 0) 
@@ -16,3 +28,5 @@ function verificaPares(elemento, indice){
     console.log("O número : " + elemento + " corresponde ao índice " + indice + " do arrayNumeros");
 }
 arrayNumeros.forEach(verificaPares);
+
+ */
