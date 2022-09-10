@@ -26,7 +26,8 @@ function executarMenu() {
 (3) Pesquisar automóvel
 (4) Excluir automóvel
 (5) Consultar placa para cadastro do veículo
-(6) Sair
+(6) Alterar veículo
+(7) Sair
 `)
 
     if (resultado == "1") {
@@ -45,7 +46,10 @@ function executarMenu() {
     if (resultado == "5") {
         validarPlaca();
     }
-    if (resultado != "6") {
+    if (resultado == "6") {
+        alterarVeiculo();
+    }
+    if (resultado != "7") {
         executarMenu();
     }
 }
@@ -154,4 +158,23 @@ function excluirVeiculo() {
         }); */
     console.log(`Lista atualizada de veículos:`);
     listarVeiculos();
+}
+
+function alterarVeiculo() {
+    let informacao = prompt(`Digite a placa do veículo a ser alterado:`);
+    let count = 0;
+    console.log(`Consulta - ${informacao}`);
+
+    for (let j = 0; j < veiculos.length; j++) {
+        if (veiculos[j].placa === informacao) {
+            count++
+        } else {
+            count = 0;
+        }
+        if (count > 0) {
+            veiculos[j].marca = prompt('Altere a marca do veículo:')
+            veiculos[j].modelo = prompt('Altere o modelo do veículo:')
+            console.log(`Veículo cadastrado - marca: ${veiculos[j].marca} - modelo: ${veiculos[j].modelo} - placa: ${veiculos[j].placa} - ano: ${veiculos[j].ano}`);
+        }
+    }
 }
