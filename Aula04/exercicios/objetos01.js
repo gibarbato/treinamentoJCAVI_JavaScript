@@ -139,17 +139,19 @@ function consultaVeiculo() {
 }
 
 function excluirVeiculo() {
-    
-let placaExcluida = prompt('Digite a placa do veículo a ser descadastrado:')
-veiculos.forEach((marca, indice) => {
-    if(marca.placa === placaExcluida){
-        veiculos.splice(indice,1);
-        console.log("A marca " + marca.placa + " corresponde ao índice: " + indice);
-    }
-    
-});
 
-veiculos.forEach((marca, indice) => {
-    console.log("A marca " + marca.placa + " corresponde ao índice: " + indice + " após o SPLICE");
-});
+    let placaExcluida = prompt('Digite a placa do veículo a ser descadastrado:')
+    veiculos.forEach((marca, indice) => {
+        if (marca.placa === placaExcluida) {
+            veiculos.splice(indice, 1);
+            alert(`O veículo de placa ${marca.placa} será excluído`)
+            //console.log("O veículo de placa " + marca.placa + " corresponde ao índice: " + indice);
+        }
+
+    });
+    /* veiculos.forEach((marca, indice) => {
+            console.log("A marca " + marca.placa + " corresponde ao índice: " + indice + " após o SPLICE");
+        }); */
+    console.log(`Lista atualizada de veículos:`);
+    listarVeiculos();
 }
