@@ -40,7 +40,7 @@ function executarMenu() {
         consultaVeiculo();
     }
     if (resultado == "4") {
-        alert('excluir veículos');
+        excluirVeiculo();
     }
     if (resultado == "5") {
         validarPlaca();
@@ -138,4 +138,18 @@ function consultaVeiculo() {
     }
 }
 
+function excluirVeiculo() {
+    
+let placaExcluida = prompt('Digite a placa do veículo a ser descadastrado:')
+veiculos.forEach((marca, indice) => {
+    if(marca.placa === placaExcluida){
+        veiculos.splice(indice,1);
+        console.log("A marca " + marca.placa + " corresponde ao índice: " + indice);
+    }
+    
+});
 
+veiculos.forEach((marca, indice) => {
+    console.log("A marca " + marca.placa + " corresponde ao índice: " + indice + " após o SPLICE");
+});
+}
