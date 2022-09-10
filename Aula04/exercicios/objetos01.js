@@ -67,7 +67,21 @@ function cadastrarVeiculo() {
     console.log(veiculo.marca);
     console.log(veiculo.placa);
     console.log(veiculo.ano);
+   
+    let informacao = veiculo.placa;
+    let count = 0;
 
+    for (let j = 0; j < veiculos.length; j++) {
+        if (veiculos[j].placa === informacao) {
+            count++
+        } else {
+            count = 0;
+        }
+        if (count > 0) {
+            console.log(`Veículo com a placa: ${veiculos[j].placa} já está cadastrado`);
+            executarMenu();
+        }
+    }
     veiculos.push(veiculo)
 }
 
@@ -77,26 +91,6 @@ function listarVeiculos() {
     });
 }
 
-/* function validarPlaca() {
-    let consultaPlaca = prompt(`Consulte a placa do veículo para validar cadastro:`);
-    let count = 0;
-    alert(`A placa informada é: ${consultaPlaca}`)
-
-    veiculos.forEach(placaCadastrada => {
-
-        if (consultaPlaca == placaCadastrada.placa) {
-            count++
-        }
-        if (count == 0) {
-            console.log('veículo não cadastrado')
-            console.log('você será direcionado para tela de cadastro')
-            cadastrarVeiculo()
-        } else {
-            console.log('placa JÁ cadastrada')
-        }
-    });
-}
- */
 function validarPlaca() {
     let consultaPlaca = prompt(`Consulte a placa do veículo para validar cadastro:`);
     //console.log(`Placa consultada - ${consultaPlaca}`);
