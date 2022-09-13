@@ -5,7 +5,6 @@
 (4) - Alterar; (desafio)
 (5) - Filtrar livros por categoria
 (0) - Sair;
-
 O cadastro dos livros deve solicitar  código, título, categoria. 
 O programa deve respeitar as seguintes restrições:
 ⦁ Não se pode cadastrar um livro com mesmo código;
@@ -21,6 +20,7 @@ function executarMenu() {
 (3) - Excluir livros;
 (4) - Alterar livros;
 (5) - Filtrar livros;
+(6) - Listar livros;
 (0) - Sair;
 `);
 
@@ -34,10 +34,13 @@ function executarMenu() {
         excluirLivro();
     }
     if (resultado == "4") {
-        alert('alterar livros');
+        alterarLivro();
     }
     if (resultado == "5") {
         filtrarLivro();
+    }
+    if (resultado == "6") {
+        listarLivros();
     }
     if (resultado != "0") {
         executarMenu();
@@ -102,7 +105,22 @@ function excluirLivro() {
     }
 }
 
+function alterarLivro() {
+    let codigo = prompt('Digite o código do livro para correção');
+    let isPesquisaCodigo = false;
 
+    livros.forEach((livro) => {
+        if (livro.codigo == codigo) {
+            livro.titulo = prompt("Digite novo título");
+            livro.categoria = prompt("Digite nova categoria");
+            isPesquisaCodigo = true;
+        }
+    });
+
+    if (!isPesquisaCodigo) {
+        alert('Livro não cadastrado');
+    }
+}
 
 function filtrarLivro() {
     let filtroLivros = [];
@@ -121,10 +139,18 @@ function filtrarLivro() {
         alert('Livro não cadastrado');
     }
 
-    filtroLivros.forEach((filtroLivro)=> {
+    filtroLivros.forEach((filtroLivro) => {
         console.log(`Cod. - ${filtroLivro.codigo} - Titulo. - ${filtroLivro.codigo} - Categoria. - ${filtroLivro.categoria}`)
     })
 }
+
+
+function listarLivros() {
+    livros.forEach((livro) => {
+        console.log(livro)
+    })
+}
+
 
 
 
