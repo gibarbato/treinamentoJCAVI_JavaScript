@@ -31,12 +31,12 @@ class Jogador {
 
             let td_id = tr.insertCell();
             let td_jogador = tr.insertCell();
-            let td_valor = tr.insertCell();
+            let td_posicao = tr.insertCell();
             let td_acoes = tr.insertCell();
 
             td_id.innerText = this.arrayJogadores[i].id;
             td_jogador.innerText = this.arrayJogadores[i].nomeJogador;
-            td_valor.innerText = this.arrayJogadores[i].posicao;
+            td_posicao.innerText = this.arrayJogadores[i].posicao;
 
             td_id.classList.add('center');
 
@@ -86,6 +86,7 @@ class Jogador {
         jogador.id = this.id;
         jogador.nomeJogador = document.getElementById('jogador').value;
         jogador.posicao = document.getElementById('posicao').value;
+        jogador.mensalista = "não";
 
         return jogador;
     }

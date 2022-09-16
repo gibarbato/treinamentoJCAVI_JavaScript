@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>TDM - Cadstro de Novos Jogadores</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="js/script1.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Turma da Manguaça</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cadastroMensalistas.html">Cadastro Mensalistas</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+    </nav>
+
+    <main>
+        <div class="title">
+            <h2>Jogadores</h2>
+            <span>Lista de Jogadores</span>
+        </div>
+
+        <div class="card">
+            <div class="lineInput">
+                <label>Jogador</label>
+                <input type="text" id="jogador" placeholder="Nome do jogador">
+            </div>
+            <div class="lineInput">
+                <label>Posição</label>
+                <input type="text" id="posicao" placeholder="Posição do jogador">
+            </div>
+            <button onclick="jogador.salvar()" id="btn1">Salvar</button>
+            <button onclick="jogador.cancelar()">Cancelar</button>
+        </div>
+
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th class="center">ID</th>
+                    <th>Jogador</th>
+                    <th>Posição</th>
+                    <th class="center">Ações</th>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+
+</html>
