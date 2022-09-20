@@ -9,33 +9,16 @@ function FormularioSemiNovos() {
     const [marca, setMarca] = useState('');
     const [ano, setAno] = useState('');
 
-
     function cadastrarVeiculo() {
-        let placaInformada = placa;
-        let isNovaPlaca = true;
-
-        arrayVeiculos.forEach(veiculo => {
-            if (veiculo.placa === placaInformada) {
-                isNovaPlaca = false;
-            }
-        });
-        if (isNovaPlaca) {
-            const veiculo = {
-                placa: placa,
-                modelo: modelo,
-                marca: marca,
-                ano: ano,
-            }
-            arrayVeiculos.push(veiculo);
-            console.log(veiculo);
-        } else {
-            alert('veículo já cadastrado');
+        const veiculo = {
+            placa: placa,
+            modelo: modelo,
+            marca: marca,
+            ano: ano,
         }
+        arrayVeiculos.push(veiculo);
+        console.log(arrayVeiculos);
     }
-
-
-
-
     return (
         <div>
             <div>
