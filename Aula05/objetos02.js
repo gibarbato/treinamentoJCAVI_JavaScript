@@ -81,7 +81,7 @@ function pesquisarLivro() {
             console.log(`Código: ${livro.codigo} - Título: ${livro.titulo} - Categoria: ${livro.categoria}`)
         }
     });
-    if (!isPesquisaCodigo) {
+    if (isPesquisaCodigo) {
         alert('Livro não cadastrado');
     }
 
