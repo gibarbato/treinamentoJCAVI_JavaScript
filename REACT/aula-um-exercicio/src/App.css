@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.appH3 {
+  color: blue;
+  text-align: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +41,27 @@
     transform: rotate(360deg);
   }
 }
+
+.form {
+  background-color: #224ace;
+  color: azure;
+  
+}
+
+.container {
+  text-align: center;
+}
+input {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px 0px;
+  width: 300px;
+}
+
+button {
+  background-color: rgb(163, 114, 202);
+  margin: 5px 0px;
+  width: 300px;
+
+}
+

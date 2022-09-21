@@ -7,6 +7,7 @@ function Formulario() {
     const [modelo, setModelo] = useState('');
     const [marca, setMarca] = useState('');
     const [ano, setAno] = useState('');
+    const [pesquisa, setPesquisa] = useState('');
 
     // função cadastrar()
     /*     const cadastrar = () => {
@@ -48,19 +49,34 @@ function Formulario() {
         console.log(veiculos);
     }
 
+    function pesquisar() {
+        let placaPesquisa = pesquisa;
+        let isPlacaPesquisa = false;
 
+        veiculos.forEach(veiculo => {
+            if (veiculo.placa === placaPesquisa) {
+                isPlacaPesquisa = true;
+                alert(`Veículo cadastrado - Placa - ${veiculo.placa} - Modelo - ${veiculo.modelo}`);
+            }
+        });
+        if (!isPlacaPesquisa) {
+            alert('Veículo não cadastrado');
+        }
+    }
 
 
 
 
     //------
     return (
-        <div>
-            <h1>Formulário</h1>
-            <h2>Placa: {placa}</h2>
-            <h2>Modelo: {modelo}</h2>
-            <h2>Marca: {marca}</h2>
-            <h3>Ano: {ano}</h3>
+        <div className="container">
+            <div className="form">
+                <h1>Formulário</h1>
+                <h2>Placa: {placa}</h2>
+                <h2>Modelo: {modelo}</h2>
+                <h2>Marca: {marca}</h2>
+                <h3>Ano: {ano}</h3>
+            </div>
             <div>
                 <input onChange={(e) => { setPlaca(e.target.value) }} placeholder="Placa" value={placa}></input>
             </div>
@@ -74,8 +90,17 @@ function Formulario() {
                 <input type="number" onChange={(e) => { setAno(e.target.value) }} placeholder="Ano" value={ano}></input>
             </div>
             <button onClick={cadastrar}>Cadastrar</button>
+            
+
+            <div>
+                <input onChange={(e) => { setPesquisa(e.target.value) }} placeholder="Placa Pesquisa" value={pesquisa}></input>
+            </div>
+            <button onClick={pesquisar}>Pesquisar</button>
+            <div>
             <button onClick={listar}>Listar</button>
+            </div>
         </div>
+
     );
 }
 

@@ -6,7 +6,7 @@ function App() {
   
   return (
     <div>
-    <h3>Iniciando os trabalhos</h3>
+    <h3 className='appH3'>Iniciando os trabalhos</h3>
     <Formulario></Formulario>  
     </div>
     
