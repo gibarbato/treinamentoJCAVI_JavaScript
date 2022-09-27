@@ -3,6 +3,7 @@
 }
 
 .appH3 {
+  background-color: #94acdd;
   color: blue;
   text-align: center;
 }
@@ -45,12 +46,15 @@
 .form {
   background-color: #224ace;
   color: azure;
+  text-align: center;
   
 }
 
 .container {
+  padding: 0%;
   text-align: center;
 }
+
 input {
   border-radius: 5px;
   padding: 3px;
@@ -60,8 +64,10 @@ input {
 
 button {
   background-color: rgb(163, 114, 202);
+  border-radius: 5px;
   margin: 5px 0px;
   width: 300px;
+  height: 40px;
 
 }
 
