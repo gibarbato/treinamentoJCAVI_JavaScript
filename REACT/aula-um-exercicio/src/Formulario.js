@@ -30,6 +30,14 @@ function Formulario() {
         } else {
             alert('placa já cadastrada');
         }
+        limparForm();
+    }
+
+    function limparForm() {
+        setPlaca('');
+        setModelo('');
+        setMarca('');
+        setAno('');
     }
 
     function listar() {
@@ -38,26 +46,6 @@ function Formulario() {
         })
         console.log(veiculos);
     }
-
-    /*  function pesquisar() {
-         let placaPesquisa = pesquisa;
-         let isPlacaPesquisa = false;
- 
-         if(placaPesquisa === ''){
-             alert('digite uma placa válida');
-             
-         }
- 
-         veiculos.forEach(veiculo => {
-             if (veiculo.placa === placaPesquisa) {
-                 isPlacaPesquisa = true;
-                 alert(`Veículo cadastrado - Placa - ${veiculo.placa} - Modelo - ${veiculo.modelo}`);
-             }
-         });
-         if (!isPlacaPesquisa) {
-             alert('Veículo não cadastrado');
-         }
-     } */
 
     function pesquisar() {
         let listaPesquisa = [];
@@ -68,23 +56,25 @@ function Formulario() {
             alert('digite uma Placa, ou modelo, ou marca válidos');
         }
         veiculos.forEach((veiculo) => {
-            if (veiculo.placa === valorPesquisa || veiculo.modelo === valorPesquisa || veiculo.marca === valorPesquisa|| veiculo.ano === valorPesquisa) {
+            if (veiculo.placa === valorPesquisa || veiculo.modelo === valorPesquisa || veiculo.marca === valorPesquisa || veiculo.ano === valorPesquisa) {
                 isPesquisa = true;
                 listaPesquisa.push(veiculo)
             }
         });
         console.log(listaPesquisa);
+        limparForm();
 
         if (!isPesquisa) {
             alert('Não exitem dados para esta solicitação');
         }
+
     }
 
 
     //------
     return (
         <div className="container">
-            <div className="form">
+            {/*             <div className="form">
                 <h1>Formulário</h1>
                 <h2>Placa:</h2>
                 <h2>{placa}</h2>
@@ -94,32 +84,57 @@ function Formulario() {
                 <h2>{marca}</h2>
                 <h3>Ano:</h3>
                 <h3>{ano}</h3>
+            </div> */}
+            {/* cadastro */}
+            <div className="container-cadastro">
+                <div>
+                    <input onChange={(e) => { setPlaca(e.target.value) }} placeholder="Placa" value={placa}></input>
+                </div>
+                <div>
+                    <input onChange={(e) => { setModelo(e.target.value) }} placeholder="Modelo" value={modelo}></input>
+                </div>
+                <div>
+                    <input onChange={(e) => { setMarca(e.target.value) }} placeholder="Marca" value={marca}></input>
+                </div>
+                <div>
+                    <input type="number" onChange={(e) => { setAno(e.target.value) }} placeholder="Ano" value={ano}></input>
+                </div>
+                <button onClick={cadastrar}>Cadastrar</button>
+                {/* pesquisa */}
+                <div>
+                    <input onChange={(e) => { setPesquisa(e.target.value) }} placeholder="Placa Pesquisa" value={pesquisa}></input>
+                </div>
+                <button onClick={pesquisar}>Pesquisar</button>
+                <div>
+                    <button onClick={listar}>Listar</button>
+                </div>
             </div>
+            {/* grid veículos cadastrados */}
+            <div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Modelo</th>
+                            <th>Marca</th>
+                            <th>Ano</th>
+                        </tr>
+                        {
+                            veiculos.map((veiculo) => {
+                                return (
+                                    <tr>
+                                        <td>{veiculo.placa}</td>
+                                        <td>{veiculo.modelo}</td>
+                                        <td>{veiculo.marca}</td>
+                                        <td>{veiculo.ano}</td>
+                                    </tr>
+                                );
+                            })
+                        }
 
-            <div>
-                <input onChange={(e) => { setPlaca(e.target.value) }} placeholder="Placa" value={placa}></input>
+                    </table>
+                </div>
             </div>
-            <div>
-                <input onChange={(e) => { setModelo(e.target.value) }} placeholder="Modelo" value={modelo}></input>
-            </div>
-            <div>
-                <input onChange={(e) => { setMarca(e.target.value) }} placeholder="Marca" value={marca}></input>
-            </div>
-            <div>
-                <input type="number" onChange={(e) => { setAno(e.target.value) }} placeholder="Ano" value={ano}></input>
-            </div>
-            <button onClick={cadastrar}>Cadastrar</button>
-
-
-            <div>
-                <input onChange={(e) => { setPesquisa(e.target.value) }} placeholder="Placa Pesquisa" value={pesquisa}></input>
-            </div>
-            <button onClick={pesquisar}>Pesquisar</button>
-            <div>
-                <button onClick={listar}>Listar</button>
-            </div>
-
-        
 
         </div>
 
