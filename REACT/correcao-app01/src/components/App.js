@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { FcEmptyTrash } from 'react-icons/fc';
 
 function App() {
 
@@ -36,6 +37,30 @@ function App() {
     setAno('');
   }
 
+  function excluir(placa) {
+    veiculos.forEach((v, index)=>{
+      if(v.placa===placa){
+        veiculos.splice(index,1)
+        console.log(veiculos)
+      }
+    })
+    setVeiculos([...veiculos]); //atualizar array
+  }
+
+
+  function filtrarVeiculo(placa){
+
+    let veiculo = null;
+
+    veiculos.forEach((v)=>{
+      if(veiculo.placa===placa){
+        veiculo = v
+      }
+    })
+
+    return veiculo
+  } 
+
   function pesquisar() {
     if (!placaPesquisa) {
       alert('Digite a placa que deseja pesquisar');
@@ -47,9 +72,7 @@ function App() {
           setMarcaPesquisa(v.marca);
           setAnoPesquisa(v.ano);
         }
-      }
-      )
-
+      })
     }
   }
 
@@ -89,18 +112,21 @@ function App() {
             <th>Modelo</th>
             <th>Marca</th>
             <th>Ano</th>
+            <th>Ação</th>
           </tr>
-          {
-            veiculos.map((veiculo) => {
-              return (
-                <tr>
-                  <td>{veiculo.placa}</td>
-                  <td>{veiculo.modelo}</td>
-                  <td>{veiculo.marca}</td>
-                  <td>{veiculo.ano}</td>
-                </tr>
-              );
-            })
+          {veiculos.map((veiculo) => {
+            return (
+              <tr>
+                <td>{veiculo.placa}</td>
+                <td>{veiculo.modelo}</td>
+                <td>{veiculo.marca}</td>
+                <td>{veiculo.ano}</td>
+                <td>
+                  <button onClick={()=>(excluir(veiculo.placa))}><FcEmptyTrash /></button>
+                </td>
+              </tr>
+            );
+          })
           }
 
         </table>
